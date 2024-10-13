@@ -1,0 +1,14 @@
+{
+    "name": "Go Development",
+    "image": "golang:1.23.1",  // Official Go image
+    "settings": {
+        "go.useLanguageServer": true,
+        "go.toolsEnvVars": {
+            "GO111MODULE": "on"
+        }
+    },
+    "extensions": [
+        "golang.go"
+    ],
+    "postCreateCommand": "echo 'Environment is Ready!'"
+}
