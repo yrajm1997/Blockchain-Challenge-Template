@@ -1,4 +1,4 @@
-package main
+package blockchain
 
 import (
 	"crypto/sha256"
@@ -35,7 +35,7 @@ func CreateBlock(blockID int, previousHash string, transactions []Transaction) B
 	// 2. Set the Timestamp to the current time
 	newBlock.Timestamp = time.Now()
 	// 3. Calculate the Hash of the block using the CalculateHash method
-	newBlock.calculateHash()
+	newBlock.CalculateHash()
 	// 4. Return a pointer to the new Block
 	return newBlock
 }
@@ -52,13 +52,13 @@ func CreateGenesisBlock(transactions []Transaction) Block {
 	// 2. Set the Timestamp to the current time
 	newBlock.Timestamp = time.Now()
 	// 3. Calculate the Hash of the block using the CalculateHash method
-	newBlock.calculateHash()
+	newBlock.CalculateHash()
 	// 4. Return a pointer to the new Block
 	return newBlock
 }
 
 // CalculateHash calculates the hash of the block
-func (b *Block) calculateHash() string {
+func (b *Block) CalculateHash() string {
 	// TODO: Implement the CalculateHash function
 	// 1. Create a string that combines the block's data (BlockID, PreviousHash, Transactions, and Timestamp)
 	record := strconv.Itoa(b.BlockID) + b.PreviousHash + b.Timestamp.String() +  fmt.Sprintf("%v", b.Transactions)
@@ -76,7 +76,7 @@ func CalculateSHA256(data string) string {
 }
 
 
-func (bchain *Blockchain) addNewBlock(transactions []Transaction) {
+func (bchain *Blockchain) AddNewBlock(transactions []Transaction) {
 	if len(bchain.Blocks) == 0 {
 		newBlock := CreateGenesisBlock(transactions)
 		bchain.Blocks = append(bchain.Blocks, newBlock)

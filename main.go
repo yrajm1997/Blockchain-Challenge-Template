@@ -2,27 +2,28 @@ package main
 
 import (
 	"fmt"
+	bc "blockchain-api/blockchain"
 )
 
 
 func main() {
 	// First transaction
-	tx1 := Transaction{Type: "deposit", AccountID: "1234", Amount: 2000}
+	tx1 := bc.Transaction{Type: "deposit", AccountID: "1234", Amount: 2000}
 	
 	// Create empty Blockchain
-	var blockchain Blockchain
+	var blockchain bc.Blockchain
 	
 	// Add transaction to blockchain
-	blockchain.addNewBlock([]Transaction{tx1})
+	blockchain.AddNewBlock([]bc.Transaction{tx1})
 
 	// Another transaction
-	tx2 := Transaction{Type: "withdraw", AccountID: "1234", Amount: 500}
+	tx2 := bc.Transaction{Type: "withdraw", AccountID: "1234", Amount: 500}
 
 	// Add to blockchain
-	blockchain.addNewBlock([]Transaction{tx2})
+	blockchain.AddNewBlock([]bc.Transaction{tx2})
 
 	// Validate Blockchain Integrity
-	fmt.Printf("Is Blockchain valid: %t\n", ValidateBlockchainIntegrity(blockchain))
+	fmt.Printf("Is Blockchain valid: %t\n", bc.ValidateBlockchainIntegrity(blockchain))
 
 	// Display the blockchain
 	for _, block := range blockchain.Blocks {
@@ -35,5 +36,5 @@ func main() {
 
 	blockchain.Blocks[1].Hash = "123456"
 	// Validate Blockchain Integrity
-	fmt.Printf("Is Blockchain valid: %t\n", ValidateBlockchainIntegrity(blockchain))
+	fmt.Printf("Is Blockchain valid: %t\n", bc.ValidateBlockchainIntegrity(blockchain))
 }
