@@ -13,16 +13,16 @@ func main() {
 	var blockchain Blockchain
 	
 	// Add transaction to blockchain
-	blockchain.AddNewBlock([]Transaction{tx1})
+	blockchain.addNewBlock([]Transaction{tx1})
 
 	// Another transaction
 	tx2 := Transaction{Type: "withdraw", AccountID: "1234", Amount: 500}
 
 	// Add to blockchain
-	blockchain.AddNewBlock([]Transaction{tx2})
+	blockchain.addNewBlock([]Transaction{tx2})
 
 	// Validate Blockchain Integrity
-	fmt.Printf("Blockchain Integrity: %t\n", ValidateBlockchainIntegrity(blockchain))
+	fmt.Printf("Is Blockchain valid: %t\n", ValidateBlockchainIntegrity(blockchain))
 
 	// Display the blockchain
 	for _, block := range blockchain.Blocks {
@@ -32,4 +32,8 @@ func main() {
 		fmt.Printf("Transactions: %v\n", block.Transactions)
 		fmt.Printf("Timestamp: %s\n\n", block.Timestamp.String())
 	}
+
+	blockchain.Blocks[1].Hash = "123456"
+	// Validate Blockchain Integrity
+	fmt.Printf("Is Blockchain valid: %t\n", ValidateBlockchainIntegrity(blockchain))
 }
