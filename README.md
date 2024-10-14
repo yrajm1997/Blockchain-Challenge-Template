@@ -5,21 +5,21 @@ An implementation of core blockchain concepts using Go.
 ## Objective
 You are tasked with developing a simple blockchain-based banking ledger system using Go. The blockchain will record transactions such as deposits, withdrawals, and transfers between accounts, ensuring immutability and transparency of transactions. The system will include the creation of blocks, hashing, and validation mechanisms to ensure the security and consistency of the ledger.
 
-## Getting Started
+## Steps to Follow
 1. This GitHub repository will be accessible to you once you accept the Assignment.
 2. You have to work directly in this GitHub repository. It is like your own copy of the original repository.
 
 3. The folder structure is as given below:
-```
-root
-├── blockchain/
-│   ├── block.go
-│   └── transaction.go
-├── tests/
-│   └── run_test.go
-├── main.go
-└── go.mod
-```
+   ```
+   root
+   ├── blockchain/
+   │   ├── block.go
+   │   └── transaction.go
+   ├── tests/
+   │   └── run_test.go
+   ├── main.go
+   └── go.mod
+   ```
 
 4. To edit and run the files **Use GitHub Codespaces**:
    - Click on the green **Code** dropdown button in this repository.
@@ -61,13 +61,6 @@ root
 - **`main.go`**:
   - Use this file to import and test the functions present in `block.go` and `transaction.go` files.
 
-## Steps to Follow
-1. Set up your environment using **GitHub Codespaces**.
-2. **block.go**: Implement the required functions for block creation, hash calculation, etc.
-3. **transaction.go**: Implement the required functions for transaction creation and validation.
-4. **main.go**: Test the blockchain by running `go run main.go`. It will create a blockchain and add blocks to it, and check its integrity.
-5. Run the code inside **GitHub Codespaces** to test your implementation.
-6. Run the test cases by running `go test ./tests -v`
 
 ## Tips
 - Use the provided `CalculateSHA256` function in `block.go` for hash calculation.
