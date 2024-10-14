@@ -69,6 +69,15 @@ You are tasked with developing a simple blockchain-based banking ledger system u
 
 ## Submission Guidelines
 After completing the challenge and developing the solution code in GitHub Codespace, commit and push the changes to this repository. The latest push will be considered for grading.
+  - Stage your changes and commit the files:
+    ```
+    git add .
+    git commit -m "Completed blockchain playground challenge"
+    ```
+  - Push your changes to the GitHub repository:
+    ```
+    git push
+    ```
 
 ## Evaluation Criteria
 - Correct implementation of blockchain and block creation logic.
