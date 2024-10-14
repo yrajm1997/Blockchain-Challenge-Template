@@ -33,8 +33,4 @@ func main() {
 		fmt.Printf("Transactions: %v\n", block.Transactions)
 		fmt.Printf("Timestamp: %s\n\n", block.Timestamp.String())
 	}
-
-	blockchain.Blocks[1].Hash = "123456"
-	// Validate Blockchain Integrity
-	fmt.Printf("Is Blockchain valid: %t\n", bc.ValidateBlockchainIntegrity(blockchain))
 }
